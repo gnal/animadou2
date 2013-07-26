@@ -34,4 +34,18 @@ class PackageController extends Controller
 
         return $this->render('DogMainBundle:Package:show.html.twig', $parameters);
     }
+
+    public function navAction()
+    {
+        $parameters['packages'] = $this->get('dog_main.package_manager')->findAll(
+            [
+                'a.published' => true,
+            ],
+            [
+                'a.translations' => 'translations',
+            ]
+        );
+
+        return $this->render('DogMainBundle:Package:nav.html.twig', $parameters);
+    }
 }

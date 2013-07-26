@@ -28,6 +28,11 @@ class PackageAdmin extends Admin
     {
         $builder
             ->add('name')
+            ->add('content', 'textarea', [
+                'attr' => [
+                    'class' => 'tinymce',
+                ],
+            ])
         ;
     }
 }

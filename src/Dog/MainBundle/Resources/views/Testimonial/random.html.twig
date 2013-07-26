@@ -1,0 +1,6 @@
+{% for testimonial in testimonials %}
+<blockquote>
+    {{ testimonial.translation.content|raw }}
+    <small>{{ testimonial.name }}</small>
+</blockquote>
+{% endfor %}

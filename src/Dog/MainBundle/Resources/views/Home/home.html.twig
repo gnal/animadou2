@@ -1,1 +1,5 @@
 {% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block left_sidebar %}
+{{ render(controller('DogMainBundle:Testimonial:random')) }}
+{% endblock %}

@@ -1,19 +1,54 @@
 {% extends 'MsiCmfBundle:Page:layout.html.twig' %}
 
 {% block css %}
-<link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<link href="/bundles/dogmain/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <style type="text/css">
 html {
     overflow-y: scroll;
 }
+
 body {
     padding-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: Georgia;
+    font-weight: normal;
+}
+
+h1 {
+    margin: 0;
+}
+
+.breadcrumb {
+    background: none;
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#header {
+    padding: 0 0 20px;
+}
+
+#slider {
+    background: #999;
+    padding: 15px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+#slider ul {
+    margin-bottom: 0;
 }
 
 #slider .slider {
     position: relative;
-    width: 770px;
-    height: 231px;
+    width: 700px;
+    height: 210px;
 }
 
 #slider .slider li {
@@ -24,6 +59,14 @@ body {
     position: absolute;
     visibility: hidden;
 }
+
+#content {
+    margin-bottom: 20px;
+}
+
+#footer {
+    font-size: 85%;
+}
 </style>
 {{ parent() }}
 {% endblock %}
@@ -32,7 +75,6 @@ body {
 <div class="navbar navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">{{ site.translation.brand }}</a>
             <ul class="nav pull-right">
                 <li><a href="#about">Contact</a></li>
                 <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
@@ -41,9 +83,33 @@ body {
     </div>
 </div>
 <div class="container">
-    <div class="row">
-        <div class="span6 offset6">
-            // menu
+    <div id="header">
+        <div class="row">
+            <div class="span3">
+                <h1>Animadou</h1>
+            </div>
+            <div class="span9">
+                {#<p class="lead text-right"><i class="icon-phone"></i> 514 862 5382</p>#}
+                {#<ul class="nav nav-pills pull-right">
+                    <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+                    <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
+                    <li><a href="{{ path('dog_main_package_list') }}">Forfaits</a></li>
+                    <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
+                    <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
+                </ul>#}
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse" style="margin-bottom: 0;">
+        <div class="navbar-inner" style="border-radius: 0;">
+            <ul class="nav">
+                <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
+                <li><a href="{{ path('dog_main_package_list') }}">Forfaits</a></li>
+                <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
+                <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
+            </ul>
+            <p class="navbar-text pull-right" style="color: #fff;"><i class="icon-fixed-width icon-phone"></i> 514.826.5695</p>
         </div>
     </div>
     <div class="row">
@@ -54,36 +120,96 @@ body {
     </div>
     <div class="row">
         <div class="span12">
-            {{ block('breadcrumb') }}
+            {% block breadcrumb %}
+            {% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: []} %}
+            {% endblock %}
         </div>
     </div>
-    <div class="row">
-        <div class="span3">
-            {# Sidebar #}
-            {{ block('sidebar') }}
-        </div>
-        <div class="span9">
-            {% if page.id and page.showTitle %}
-                <h2>{{ page.translation.title }}</h2>
-            {% elseif block('title') %}
-                <h2>{{ block('title') }}</h2>
+    <div id="content">
+        <div class="row">
+            {% if block('left_sidebar') == '' %}
+            <div class="span3">
+                {# Sidebar #}
+                {{ block('sidebar') }}
+            </div>
             {% endif %}
-            {# Content #}
-            {{ msi_block_render('content_top', page) }}
-            {{ block('page_content') }}
-            {{ msi_block_render('content_bottom', page) }}
+            <div class="span9">
+                {% if page.id and page.showTitle %}
+                    <h2>{{ page.translation.title }}</h2>
+                {% elseif block('title') %}
+                    <h2>{{ block('title') }}</h2>
+                {% endif %}
+                {# Content #}
+                {{ msi_block_render('content_top', page) }}
+                {{ block('page_content') }}
+                {{ msi_block_render('content_bottom', page) }}
+            </div>
+            {% if block('left_sidebar') %}
+            <div class="span3">
+                {# Left Sidebar #}
+                {{ block('left_sidebar') }}
+            </div>
+            {% endif %}
         </div>
     </div>
-    <hr>
     <div class="row">
-        <div class="span6">
-            <p><small class="muted">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</small></p>
+        <div class="span4">
+            <div class="well">
+                <h4>Lorem ipsum</h4>
+                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+            </div>
         </div>
-        <div class="span6">
-            {{ msi_block_render('footer', page) }}
+        <div class="span4">
+            <div class="well">
+                <h4>Lorem ipsum</h4>
+                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+            </div>
+        </div>
+        <div class="span4">
+            <div class="well">
+                <h4>Lorem ipsum</h4>
+                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+            </div>
         </div>
     </div>
 </div>
+<div id="footer" class="well" style="border-radius: 0;">
+    <div class="container">
+        <div class="row">
+            <div class="span2">
+                <h4>{{ site.translation.brand }}</h4>
+                <p>
+                    We love to love your dogs.
+                </p>
+            </div>
+            <div class="span2 offset1">
+                {{ render(controller('DogMainBundle:Service:nav')) }}
+            </div>
+            <div class="span2">
+                {{ render(controller('DogMainBundle:Package:nav')) }}
+            </div>
+            <div class="span2">
+                <h4>Autres</h4>
+                <ul class="unstyled">
+                    <li><a href="#">Nam bibendum ipsum</a></li>
+                    <li><a href="#">Nam bibendum ipsum</a></li>
+                    <li><a href="#">Nam bibendum ipsum</a></li>
+                    <li><a href="#">Nam bibendum ipsum</a></li>
+                    <li><a href="#">Nam bibendum ipsum</a></li>
+                </ul>
+            </div>
+            <div class="span2 offset1">
+                <h4>Contact</h4>
+                <p>
+                    514.826.5695
+                    <br>
+                    <a href="mailto:info@animadou.com">info@animadou.com</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-center muted" style="margin-bottom: 20px;">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</p>
 {% endblock body %}
 
 {% block js %}

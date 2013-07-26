@@ -34,4 +34,18 @@ class ServiceController extends Controller
 
         return $this->render('DogMainBundle:Service:show.html.twig', $parameters);
     }
+
+    public function navAction()
+    {
+        $parameters['services'] = $this->get('dog_main.service_manager')->findAll(
+            [
+                'a.published' => true,
+            ],
+            [
+                'a.translations' => 'translations',
+            ]
+        );
+
+        return $this->render('DogMainBundle:Service:nav.html.twig', $parameters);
+    }
 }

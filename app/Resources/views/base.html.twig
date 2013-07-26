@@ -7,6 +7,9 @@
         <title>{{ block('title')|striptags }} - {{ block('brand')|striptags }}</title>
         {% block css %}{% endblock css %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <script>
+            function nl(t){t.className=t.className.replace(new RegExp(/\shide|hide\s|hide/),'');}
+        </script>
     </head>
     <body>
         {% block body %}{% endblock body %}

@@ -3,9 +3,10 @@
 {% block title %}Packages{% endblock %}
 
 {% block content %}
+<p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue. In erat lacus, vestibulum quis pulvinar a, placerat sed tortor. Proin pellentesque nibh nulla. Donec elit nunc, iaculis ac interdum sed, lacinia quis tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed malesuada enim ut lectus sagittis facilisis.</p>
 <ul>
 {% for package in packages %}
-    <li><a href="{{ path('dog_main_package_show', {package: package.translation.slug}) }}">{{ package }}</a></li>
+    <li></i><a href="{{ path('dog_main_package_show', {package: package.translation.slug}) }}">{{ package }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
@@ -16,4 +17,8 @@
         label: block('title')
     }
 ]} %}
+{% endblock %}
+
+{% block sidebar %}
+{{ render(controller('DogMainBundle:Package:nav')) }}
 {% endblock %}

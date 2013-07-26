@@ -1,0 +1,6 @@
+<h4>Packages</h4>
+<ul class="unstyled">
+{% for package in packages %}
+    <li></i><a href="{{ path('dog_main_package_show', {package: package.translation.slug}) }}">{{ package|truncate(20) }}</a></li>
+{% endfor %}
+</ul>

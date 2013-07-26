@@ -21,3 +21,11 @@ dog_main_package_list:
 dog_main_package_show:
     pattern:  /packages/{package}.html
     defaults: { _controller: DogMainBundle:Package:show }
+
+dog_main_gallery_list:
+    pattern:  /galleries.html
+    defaults: { _controller: DogMainBundle:Gallery:list }
+
+dog_main_gallery_show:
+    pattern:  /galleries/{package}.html
+    defaults: { _controller: DogMainBundle:Gallery:show }

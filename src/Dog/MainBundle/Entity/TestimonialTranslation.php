@@ -3,7 +3,6 @@
 namespace Dog\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity
@@ -20,36 +19,18 @@ class TestimonialTranslation
     protected $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text")
      */
-    protected $name;
+    protected $content;
 
-    /**
-     * @Gedmo\Slug(fields={"name"})
-     * @ORM\Column(type="string")
-     */
-    protected $slug;
-
-    public function getName()
+    public function getContent()
     {
-        return $this->name;
+        return $this->content;
     }
 
-    public function setName($name)
+    public function setContent($content)
     {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getSlug()
-    {
-        return $this->slug;
-    }
-
-    public function setSlug($slug)
-    {
-        $this->slug = $slug;
+        $this->content = $content;
 
         return $this;
     }

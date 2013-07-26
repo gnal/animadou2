@@ -3,7 +3,7 @@
 {% block title %}{{ testimonial }}{% endblock %}
 
 {% block content %}
-// ...
+{{ testimonial.translation.content|raw }}
 {% endblock %}
 
 {% block breadcrumb %}

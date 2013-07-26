@@ -5,7 +5,7 @@
 {% block content %}
 <ul>
 {% for testimonial in testimonials %}
-    <li><a href="{{ path('dog_main_testimonial_show', {testimonial: testimonial.translation.slug}) }}">{{ testimonial }}</a></li>
+    <li><a href="{{ path('dog_main_testimonial_show', {testimonial: testimonial.slug}) }}">{{ testimonial }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}{{ service }}{% endblock %}
 
 {% block content %}
-// ...
+{{ service.translation.content|raw }}
 {% endblock %}
 
 {% block breadcrumb %}
@@ -16,4 +16,8 @@
         label: block('title')
     }
 ]} %}
+{% endblock %}
+
+{% block sidebar %}
+{{ render(controller('DogMainBundle:Service:nav')) }}
 {% endblock %}
