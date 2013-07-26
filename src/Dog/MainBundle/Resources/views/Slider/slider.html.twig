@@ -1,0 +1,12 @@
+<div id="slider">
+    <ul class="slider unstyled">
+        {% for image in page.images %}
+            <li>{% if image.href %}<a href="{{ image.href }}">{% endif %}<img src="{{ image.pathname('filename') }}" alt="0">{% if image.href %}</a>{% endif %}</li>
+        {% endfor %}
+    </ul>
+    <ul class="carousel unstyled">
+        {% for image in page.images %}
+            <li></li>
+        {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+dog_main_testimonial_list:
+    pattern:  /testimonials.html
+    defaults: { _controller: DogMainBundle:Testimonial:list }
+
+dog_main_testimonial_show:
+    pattern:  /testimonials/{testimonial}.html
+    defaults: { _controller: DogMainBundle:Testimonial:show }
+
+dog_main_service_list:
+    pattern:  /services.html
+    defaults: { _controller: DogMainBundle:Service:list }
+
+dog_main_service_show:
+    pattern:  /services/{service}.html
+    defaults: { _controller: DogMainBundle:Service:show }
+
+dog_main_package_list:
+    pattern:  /packages.html
+    defaults: { _controller: DogMainBundle:Package:list }
+
+dog_main_package_show:
+    pattern:  /packages/{package}.html
+    defaults: { _controller: DogMainBundle:Package:show }

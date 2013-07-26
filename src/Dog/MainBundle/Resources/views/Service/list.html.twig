@@ -1,0 +1,19 @@
+{% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+<ul>
+{% for service in services %}
+    <li><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block breadcrumb %}
+{% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: [
+    {
+        label: block('title')
+    }
+]} %}
+{% endblock %}

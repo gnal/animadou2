@@ -1,0 +1,7 @@
+entity:
+    PageImage: Image|Images
+    Testimonial: Testimonial|Testimonials
+    Service: Service|Services
+    Package: Package|Packages
+    Gallery: Gallery|Galleries
+    GalleryImage: Image|Images

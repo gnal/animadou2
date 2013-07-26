@@ -1,0 +1,19 @@
+{% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block title %}Packages{% endblock %}
+
+{% block content %}
+<ul>
+{% for package in packages %}
+    <li><a href="{{ path('dog_main_package_show', {package: package.translation.slug}) }}">{{ package }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block breadcrumb %}
+{% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: [
+    {
+        label: block('title')
+    }
+]} %}
+{% endblock %}

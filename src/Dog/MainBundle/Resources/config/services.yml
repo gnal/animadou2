@@ -1,0 +1,7 @@
+parameters:
+#    dog_main.example.class: Dog\MainBundle\Example
+
+services:
+#    dog_main.example:
+#        class: %dog_main.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

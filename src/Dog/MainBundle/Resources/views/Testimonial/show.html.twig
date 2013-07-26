@@ -1,0 +1,19 @@
+{% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block title %}{{ testimonial }}{% endblock %}
+
+{% block content %}
+// ...
+{% endblock %}
+
+{% block breadcrumb %}
+{% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: [
+    {
+        label: 'Testimonials',
+        path: path('dog_main_testimonial_list')
+    },
+    {
+        label: block('title')
+    }
+]} %}
+{% endblock %}

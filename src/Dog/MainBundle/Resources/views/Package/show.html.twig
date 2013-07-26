@@ -1,0 +1,19 @@
+{% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block title %}{{ package }}{% endblock %}
+
+{% block content %}
+// ...
+{% endblock %}
+
+{% block breadcrumb %}
+{% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: [
+    {
+        label: 'Packages',
+        path: path('dog_main_package_list')
+    },
+    {
+        label: block('title')
+    }
+]} %}
+{% endblock %}

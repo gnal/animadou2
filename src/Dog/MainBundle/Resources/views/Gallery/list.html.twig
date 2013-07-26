@@ -1,0 +1,19 @@
+{% extends 'DogMainBundle::layout.html.twig' %}
+
+{% block title %}Galleries{% endblock %}
+
+{% block content %}
+<ul>
+{% for gallery in galleries %}
+    <li><a href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">{{ gallery }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
+
+{% block breadcrumb %}
+{% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: [
+    {
+        label: block('title')
+    }
+]} %}
+{% endblock %}

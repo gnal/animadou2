@@ -1,0 +1,96 @@
+{% extends 'MsiCmfBundle:Page:layout.html.twig' %}
+
+{% block css %}
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+<style type="text/css">
+html {
+    overflow-y: scroll;
+}
+body {
+    padding-top: 60px;
+}
+
+#slider .slider {
+    position: relative;
+    width: 770px;
+    height: 231px;
+}
+
+#slider .slider li {
+    position: absolute;
+}
+
+#slider .carousel {
+    position: absolute;
+    visibility: hidden;
+}
+</style>
+{{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="navbar navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="#">{{ site.translation.brand }}</a>
+            <ul class="nav pull-right">
+                <li><a href="#about">Contact</a></li>
+                <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="span6 offset6">
+            // menu
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            {# Slider #}
+            {% include 'DogMainBundle:Slider:slider.html.twig' %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12">
+            {{ block('breadcrumb') }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+            {# Sidebar #}
+            {{ block('sidebar') }}
+        </div>
+        <div class="span9">
+            {% if page.id and page.showTitle %}
+                <h2>{{ page.translation.title }}</h2>
+            {% elseif block('title') %}
+                <h2>{{ block('title') }}</h2>
+            {% endif %}
+            {# Content #}
+            {{ msi_block_render('content_top', page) }}
+            {{ block('page_content') }}
+            {{ msi_block_render('content_bottom', page) }}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="span6">
+            <p><small class="muted">&copy; {{ 'now'|date('Y') }} {{ site.translation.brand }}</small></p>
+        </div>
+        <div class="span6">
+            {{ msi_block_render('footer', page) }}
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block js %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="/bundles/dogmain/vendor/hinclude/hinclude.js"></script>
+{{ parent() }}
+{% include 'DogMainBundle:Slider:slider_js.html.twig' %}
+{% endblock %}
