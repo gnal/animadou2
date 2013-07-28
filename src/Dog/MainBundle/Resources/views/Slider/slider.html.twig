@@ -1,22 +1,22 @@
 <div id="slider">
     <div class="row">
-        <div class="span9" style="width: 700px;">
-            <ul class="slider unstyled">
+        <div class="col-lg-4" style="width: 300px;">
+            <div class="slider-text">
+                <p class="lead">Watatatow!</p>
+                Lorem ipsum dolor sit amet
+            </div>
+        </div>
+        <div class="col-lg-8" style="width: 670px;">
+            <ul class="slider list-unstyled">
                 {% for image in page.images %}
                     <li>{% if image.href %}<a href="{{ image.href }}">{% endif %}<img class="hide" onload="nl(this);" src="{{ image.pathname('filename') }}" alt="0">{% if image.href %}</a>{% endif %}</li>
                 {% endfor %}
             </ul>
-            <ul class="carousel unstyled">
+            <ul class="carousel list-unstyled">
                 {% for image in page.images %}
                     <li></li>
                 {% endfor %}
             </ul>
-        </div>
-        <div class="span3" style="width: 190px;">
-            <p class="lead">Watatatow!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p><a class="btn btn-info" href="#">Learn more</a></p>
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <h4>Services</h4>
-<ul class="unstyled">
+<ul class="list-unstyled">
 {% for service in services %}
     <li></i><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service|truncate(20) }}</a></li>
 {% endfor %}

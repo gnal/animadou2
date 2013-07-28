@@ -1,13 +1,9 @@
 <ul class="breadcrumb">
     <li>
         <a href="{{ path('homepage') }}">{{ site.translation.brand }}</a>
-        {% if crumbs|length %}<span class="divider">&rsaquo;</span>{% endif %}
     </li>
 {% for crumb in crumbs %}
     <li>
-        {% if loop.index != 1 %}
-            <span class="divider">&rsaquo;</span>
-        {% endif %}
         {% if crumb.path is defined %}
             <a href="{{ crumb.path }}">{{ crumb.label|truncate(60)|raw }}</a>
         {% else %}
