@@ -29,20 +29,20 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
-# msi_cmf
+# msi_admin
 
-msi_cmf_routing:
-    resource: "@MsiCmfBundle/Resources/config/routing/routing.yml"
+msi_admin_routing:
+    resource: "@MsiAdminBundle/Resources/config/routing/routing.yml"
     prefix: /
 
-msi_cmf_loader:
+msi_admin_loader:
     resource: .
-    type: msi_cmf
+    type: msi_admin
 
 # overrides
 
 msi_page_show:
     pattern: /{_locale}/{slug}.html
-    defaults: { _controller: MsiCmfBundle:Page:show, slug: ~ }
+    defaults: { _controller: MsiAdminBundle:Page:show, slug: ~ }
     requirements:
         _locale: fr|en

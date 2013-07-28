@@ -1,112 +1,10 @@
-{% extends 'MsiCmfBundle:Page:layout.html.twig' %}
+{% extends 'MsiAdminBundle:Page:layout.html.twig' %}
 
 {% block css %}
 <link href="/bundles/dogmain/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<style type="text/css">
-html {
-    overflow-y: scroll;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: #454545;
-}
-
-a {
-    color: #3a87ad;
-}
-
-h1, h2, h3 {
-    margin-top: 10px;
-}
-
-h2 {
-    font-family: Georgia;
-    font-weight: normal;
-}
-
-h1 {
-    margin: 0;
-}
-
-#content {
-    background: #fffbf1;
-    padding: 15px;
-}
-
-.breadcrumb {
-    background: none;
-    margin-bottom: 5px;
-    padding-left: 0;
-    padding-right: 0;
-}
-
-#header {
-    padding: 10px 0 30px;
-}
-
-.navbar.navbar-inverse {
-    margin: 0 -15px;
-    border-radius: 0;
-    background: #3b8ca5;
-}
-
-.navbar-inverse .brand, .navbar-inverse .nav>li>a {
-    color: #fff;
-}
-
-#slider {
-    background-color: #222222;
-    color: #fff;
-    margin-bottom: 5px;
-    /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
-    margin: 0 -15px 5px;
-}
-
-#slider .slider-text {
-    padding: 20px 15px;
-    width: 300px;
-    height: 240px;
-    text-align: center;
-}
-
-#slider ul {
-    margin-bottom: 0;
-}
-
-#slider .slider {
-    position: relative;
-    width: 700px;
-    height: 240px;
-}
-
-#slider .slider li {
-    position: absolute;
-}
-
-#slider .carousel {
-    position: absolute;
-    visibility: hidden;
-}
-
-#footer {
-    font-size: 85%;
-    background-color: #222222;
-    color: #999999;
-    padding-top: 20px;
-}
-
-#footer a {
-    color: #fff;
-}
-
-#footer hr {
-    border-top: 1px solid #181818;
-    border-bottom: 1px solid #2c2c2c;
-}
-</style>
+<link rel="stylesheet" href="{{ asset('bundles/dogmain/css/style.css') }}">
 {{ parent() }}
 {% endblock %}
 
@@ -121,88 +19,92 @@ h1 {
         </div>
     </div>
 </div>#}
-<div class="container" id="content">
-    <div id="header">
-        <div class="row">
-            <div class="col-lg-6">
-                <h1>Animadou</h1>
-                <span class="text-muted">services de soins pour animaux de compagnie<span>
-            </div>
-            <div class="col-lg-6">
-                <div class="text-right lead">
-                    <i class="icon-phone"></i> 514 862-5382
+<div class="container">
+    <div class="content">
+        <div id="header">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1>Animadou</h1>
+                    <span class="text-muted">{{ 'slogan'|trans }}</span>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-right lead">
+                        <i class="icon-phone"></i> 514 862-5382
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="navbar navbar-inverse" style="margin-bottom: 0;">
-        <ul class="nav navbar-nav pull-right">
-            <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
-        </ul>
-        <ul class="nav navbar-nav">
-            <li><a href="{{ path('homepage') }}">Home</a></li>
-            <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
-            <li><a href="{{ path('dog_main_package_list') }}">Forfaits</a></li>
-            <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
-            <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
-            <li><a href="{{ path('dog_main_gallery_list') }}">FAQ</a></li>
-        </ul>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            {# Slider #}
-            {% include 'DogMainBundle:Slider:slider.html.twig' %}
+        <div class="navbar navbar-inverse" style="margin-bottom: 0;">
+            <ul class="nav navbar-nav pull-right">
+                <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
+                <li><a href="{{ path('dog_main_package_list') }}">Forfaits</a></li>
+                <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
+                <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
+                <li><a href="{{ path('dog_main_gallery_list') }}">FAQ</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            {% block breadcrumb %}
-            {% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: []} %}
-            {% endblock %}
+        <div class="row">
+            <div class="col-lg-12">
+                {# Slider #}
+                {% include 'DogMainBundle:Slider:slider.html.twig' %}
+            </div>
         </div>
-    </div>
-    <div class="row">
-        {% if block('left_sidebar') == '' %}
-        <div class="col-lg-3">
-            {# Sidebar #}
-            {{ block('sidebar') }}
+        <div class="row">
+            <div class="col-lg-12">
+                {% block breadcrumb %}
+                {% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: []} %}
+                {% endblock %}
+            </div>
         </div>
-        {% endif %}
-        <div class="col-lg-9">
-            {% if page.id and page.showTitle %}
-                <h2>{{ page.translation.title }}</h2>
-            {% elseif block('title') %}
-                <h2>{{ block('title') }}</h2>
+        <div class="row">
+            {% if block('left_sidebar') == '' %}
+            <div class="col-lg-3">
+                {# Sidebar #}
+                {{ block('sidebar') }}
+            </div>
             {% endif %}
-            {# Content #}
-            {{ msi_block_render('content_top', page) }}
-            {{ block('page_content') }}
-            {{ msi_block_render('content_bottom', page) }}
+            <div class="col-lg-9">
+                {% if page.id and page.showTitle %}
+                    <h2>{{ page.translation.title }}</h2>
+                {% elseif block('title') %}
+                    <h2>{{ block('title') }}</h2>
+                {% endif %}
+                {# Content #}
+                {{ msi_block_render('content_top', page) }}
+                {{ block('page_content') }}
+                {{ msi_block_render('content_bottom', page) }}
+            </div>
+            {% if block('left_sidebar') %}
+            <div class="col-lg-3">
+                {# Left Sidebar #}
+                {{ block('left_sidebar') }}
+            </div>
+            {% endif %}
         </div>
-        {% if block('left_sidebar') %}
-        <div class="col-lg-3">
-            {# Left Sidebar #}
-            {{ block('left_sidebar') }}
-        </div>
-        {% endif %}
     </div>
-    <div class="row">
-        <div class="col-lg-4">
-            <div class="well">
-                <h4>Lorem ipsum</h4>
-                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="well">
+                    <h4>Lorem ipsum</h4>
+                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="well">
-                <h4>Lorem ipsum</h4>
-                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+            <div class="col-lg-4">
+                <div class="well">
+                    <h4>Lorem ipsum</h4>
+                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="well">
-                <h4>Lorem ipsum</h4>
-                <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+            <div class="col-lg-4">
+                <div class="well">
+                    <h4>Lorem ipsum</h4>
+                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+                </div>
             </div>
         </div>
     </div>

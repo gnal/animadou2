@@ -23,9 +23,9 @@ dog_main_package_show:
     defaults: { _controller: DogMainBundle:Package:show }
 
 dog_main_gallery_list:
-    pattern:  /galleries.html
+    pattern:  /albums.html
     defaults: { _controller: DogMainBundle:Gallery:list }
 
 dog_main_gallery_show:
-    pattern:  /galleries/{gallery}.html
+    pattern:  /albums/{gallery}.html
     defaults: { _controller: DogMainBundle:Gallery:show }

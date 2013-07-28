@@ -3,98 +3,98 @@ services:
     dog_main_page_image_admin:
         class: Dog\MainBundle\Admin\PageImageAdmin
         arguments: [ @dog_main.page_image_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
         calls:
-            - [ setParent, [ @msi_cmf_page_admin ] ]
+            - [ setParent, [ @msi_admin_page_admin ] ]
 
     dog_main.page_image_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\PageImage ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager
 
     # Page
-    msi_cmf_page_admin:
-        class: %msi_cmf.page.admin%
-        arguments: [ @msi_cmf.page_manager ]
-        parent: msi_cmf.admin
+    msi_admin_page_admin:
+        class: %msi_admin.page.admin%
+        arguments: [ @msi_admin.page_manager ]
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
         calls:
-            - [addChild, [@msi_cmf_block_admin]]
+            - [addChild, [@msi_admin_block_admin]]
             - [addChild, [@dog_main_page_image_admin]]
 
-    msi_cmf.page_manager:
-        class: Msi\CmfBundle\Manager\PageManager
-        arguments: [ %msi_cmf.page.class% ]
-        parent: msi_cmf.manager
+    msi_admin.page_manager:
+        class: Msi\AdminBundle\Manager\PageManager
+        arguments: [ %msi_admin.page.class% ]
+        parent: msi_admin.manager
 
     # Gallery
     dog_main_gallery_admin:
         class: Dog\MainBundle\Admin\GalleryAdmin
         arguments: [ @dog_main.gallery_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
         calls:
             - [addChild, [@dog_main_gallery_image_admin]]
 
     dog_main.gallery_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\Gallery ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager
 
     # GalleryImage
     dog_main_gallery_image_admin:
         class: Dog\MainBundle\Admin\GalleryImageAdmin
         arguments: [ @dog_main.gallery_image_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
         calls:
             - [ setParent, [ @dog_main_gallery_admin ] ]
 
     dog_main.gallery_image_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\GalleryImage ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager
 
     # Package
     dog_main_package_admin:
         class: Dog\MainBundle\Admin\PackageAdmin
         arguments: [ @dog_main.package_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
 
     dog_main.package_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\Package ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager
 
     # Service
     dog_main_service_admin:
         class: Dog\MainBundle\Admin\ServiceAdmin
         arguments: [ @dog_main.service_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
 
     dog_main.service_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\Service ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager
 
     # Testimonial
     dog_main_testimonial_admin:
         class: Dog\MainBundle\Admin\TestimonialAdmin
         arguments: [ @dog_main.testimonial_manager ]
-        parent: msi_cmf.admin
+        parent: msi_admin.admin
         tags:
             - { name: msi.admin }
 
     dog_main.testimonial_manager:
-        class: %msi_cmf.manager.class%
+        class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\Testimonial ]
-        parent: msi_cmf.manager
+        parent: msi_admin.manager

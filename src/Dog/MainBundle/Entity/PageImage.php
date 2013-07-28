@@ -3,15 +3,15 @@
 namespace Dog\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\CmfBundle\Tools\Cutter;
+use Msi\AdminBundle\Tools\Cutter;
 
 /**
  * @ORM\Entity
  */
 class PageImage
 {
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Uploadable;
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Timestampable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Uploadable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Timestampable;
 
     /**
      * @ORM\Column(type="integer")

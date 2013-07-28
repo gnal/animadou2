@@ -1,7 +1,7 @@
 <?php
 
 use Symfony\Component\ClassLoader\ApcClassLoader;
-use Msi\CmfBundle\Request\Request;
+use Msi\AdminBundle\Request\Request;
 
 $loader = require_once __DIR__.'/../app/bootstrap.php.cache';
 

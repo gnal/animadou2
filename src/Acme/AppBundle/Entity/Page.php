@@ -3,7 +3,7 @@
 namespace Acme\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\CmfBundle\Entity\Page as BasePage;
+use Msi\AdminBundle\Entity\Page as BasePage;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**

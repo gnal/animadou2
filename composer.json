@@ -5,7 +5,7 @@
         "psr-0": { "": "src/" }
     },
     "repositories": [
-        { "type": "vcs", "url": "https://github.com/gnal/cms3.git" },
+        { "type": "vcs", "url": "https://github.com/gnal/cms4.git" },
         { "type": "vcs", "url": "https://github.com/gnal/MsiUserBundle.git" }
     ],
     "require": {
@@ -28,7 +28,7 @@
         "friendsofsymfony/user-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
 
-        "msi/cmf-bundle": "dev-master",
+        "msi/admin-bundle": "dev-master",
         "msi/user-bundle": "dev-master"
     },
     "scripts": {

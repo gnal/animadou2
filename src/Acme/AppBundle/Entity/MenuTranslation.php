@@ -3,7 +3,7 @@
 namespace Acme\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\CmfBundle\Entity\MenuTranslation as BaseMenuTranslation;
+use Msi\AdminBundle\Entity\MenuTranslation as BaseMenuTranslation;
 
 /**
  * @ORM\Entity

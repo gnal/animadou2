@@ -3,7 +3,7 @@
 namespace Acme\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Msi\CmfBundle\DataFixtures\BaseFixture;
+use Msi\AdminBundle\DataFixtures\BaseFixture;
 
 class LoadMenuData extends BaseFixture
 {
@@ -11,7 +11,7 @@ class LoadMenuData extends BaseFixture
 
     public function load(ObjectManager $manager)
     {
-        $this->manager = $this->container->get('msi_cmf.menu_root_manager');
+        $this->manager = $this->container->get('msi_admin.menu_root_manager');
         // admin root
         $this->create(
             [
@@ -36,11 +36,11 @@ class LoadMenuData extends BaseFixture
             [
                 'fr' => [
                     'name' => 'Pages',
-                    'route' => '@msi_cmf_page_admin_list',
+                    'route' => '@msi_admin_page_admin_list',
                 ],
                 'en' => [
                     'name' => 'Pages',
-                    'route' => '@msi_cmf_page_admin_list',
+                    'route' => '@msi_admin_page_admin_list',
                 ],
             ]
         );

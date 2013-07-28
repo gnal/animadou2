@@ -10,9 +10,9 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Service
 {
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Publishable;
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Timestampable;
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Translatable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Publishable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Timestampable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Translatable;
 
     /**
      * @ORM\Column(type="integer")

@@ -1,0 +1,102 @@
+html {
+    overflow-y: scroll;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #454545;
+}
+
+a {
+    color: #3a87ad;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
+}
+
+h2 {
+    font-family: Georgia;
+    font-weight: normal;
+}
+
+h1 {
+    margin: 0;
+}
+
+.content {
+    background: #fffbf1;
+    padding: 20px 15px 0;
+    margin-bottom: 5px;
+}
+
+.breadcrumb {
+    background: none;
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#header {
+    padding: 10px 0 30px;
+}
+
+.navbar.navbar-inverse {
+    margin: 0 -15px;
+    border-radius: 0;
+    background: #3b8ca5;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav>li>a {
+    color: #fff;
+}
+
+#slider {
+    background-color: #222222;
+    color: #fff;
+    margin-bottom: 5px;
+    /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+    margin: 0 -15px 5px;
+}
+
+#slider .slider-text {
+    padding: 20px 15px;
+    width: 300px;
+    height: 240px;
+    text-align: center;
+}
+
+#slider ul {
+    margin-bottom: 0;
+}
+
+#slider .slider {
+    position: relative;
+    width: 700px;
+    height: 240px;
+}
+
+#slider .slider li {
+    position: absolute;
+}
+
+#slider .carousel {
+    position: absolute;
+    visibility: hidden;
+}
+
+#footer {
+    font-size: 85%;
+    background-color: #222222;
+    color: #999999;
+    padding-top: 20px;
+}
+
+#footer a {
+    color: #fff;
+}
+
+#footer hr {
+    border-top: 1px solid #181818;
+    border-bottom: 1px solid #2c2c2c;
+}

@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TestimonialTranslation
 {
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Translation;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Translation;
 
     /**
      * @ORM\Column(type="integer")

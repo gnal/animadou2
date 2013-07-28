@@ -3,7 +3,7 @@
 namespace Acme\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\CmfBundle\Entity\BlockTranslation as BaseBlockTranslation;
+use Msi\AdminBundle\Entity\BlockTranslation as BaseBlockTranslation;
 
 /**
  * @ORM\Entity

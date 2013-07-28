@@ -17,3 +17,7 @@
     }
 ]} %}
 {% endblock %}
+
+{% block sidebar %}
+{{ render(controller('DogMainBundle:Gallery:nav')) }}
+{% endblock %}

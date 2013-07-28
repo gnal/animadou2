@@ -4,7 +4,7 @@ namespace Acme\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
-use Msi\CmfBundle\Entity\Menu as BaseMenu;
+use Msi\AdminBundle\Entity\Menu as BaseMenu;
 
 /**
  * @ORM\Entity(repositoryClass="Gedmo\Tree\Entity\Repository\NestedTreeRepository")

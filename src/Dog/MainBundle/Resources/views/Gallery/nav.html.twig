@@ -1,6 +1,6 @@
 <h4>Galleries</h4>
 <ul class="list-unstyled">
 {% for gallery in galleries %}
-    <li></i><a href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">{{ gallery|truncate(20) }}</a></li>
+    <li><a href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">{{ gallery|truncate(20) }}</a></li>
 {% endfor %}
 </ul>

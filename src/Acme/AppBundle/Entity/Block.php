@@ -3,7 +3,7 @@
 namespace Acme\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\CmfBundle\Entity\Block as BaseBlock;
+use Msi\AdminBundle\Entity\Block as BaseBlock;
 
 /**
  * @ORM\Entity

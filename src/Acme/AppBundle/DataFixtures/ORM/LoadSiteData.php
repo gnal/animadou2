@@ -3,7 +3,7 @@
 namespace Acme\Bundle\AppBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Msi\CmfBundle\DataFixtures\BaseFixture;
+use Msi\AdminBundle\DataFixtures\BaseFixture;
 
 class LoadSiteData extends BaseFixture
 {
@@ -11,7 +11,7 @@ class LoadSiteData extends BaseFixture
 
     public function load(ObjectManager $manager)
     {
-        $this->manager = $this->container->get('msi_cmf.site_manager');
+        $this->manager = $this->container->get('msi_admin.site_manager');
         $this->create(
             [
                 'host' => 'dev.acme.com',

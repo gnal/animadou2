@@ -10,7 +10,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class PackageTranslation
 {
-    use \Msi\CmfBundle\Doctrine\Extension\Model\Translation;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Translation;
 
     /**
      * @ORM\Column(type="integer")
