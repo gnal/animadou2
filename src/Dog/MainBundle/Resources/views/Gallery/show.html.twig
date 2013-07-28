@@ -11,3 +11,43 @@
     }
 ]} %}
 {% endblock %}
+
+{% block sidebar %}
+{{ render(controller('DogMainBundle:Gallery:nav')) }}
+{% endblock %}
+
+{% block title %}{{ gallery }}{% endblock %}
+
+{% block content %}
+{% for image in gallery.images %}
+    {% if loop.index == 0 or loop.index % 4 == 1 %}<div class="row" style="margin-bottom: 20px;">{% endif %}
+        <div class="col-lg-3">
+            <a class="thumbnail fancybox" rel="gallery1" href="{{ image.pathname('filename') }}"><img src="{{ image.pathname('filename', 't') }}" alt="0"></a>
+        </div>
+    {% if loop.index == gallery.images|length or loop.index % 4 == 0 %}</div>{% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block js %}
+{{ parent() }}
+<script src="{{ asset('bundles/dogmain/vendor/fancybox/source/jquery.fancybox.js') }}"></script>
+<script>
+$(document).ready(function() {
+    $('.fancybox').fancybox({
+        speedIn: 200,
+        speedOut: 200,
+        fitToView: false,
+        helpers: {
+            overlay: {
+                fixed: false
+            }
+        }
+    });
+});
+</script>
+{% endblock js %}
+
+{% block css %}
+{{ parent() }}
+<link rel="stylesheet" href="{{ asset('bundles/dogmain/vendor/fancybox/source/jquery.fancybox.css') }}">
+{% endblock css %}

@@ -25,13 +25,29 @@ class GalleryController extends Controller
         $parameters['gallery'] = $this->get('dog_main.gallery_manager')->find(
             [
                 'a.published' => true,
+                'images.published' => true,
                 'translations.slug' => $this->getRequest()->attributes->get('gallery'),
+            ],
+            [
+                'a.translations' => 'translations',
+                'a.images' => 'images',
+            ]
+        );
+
+        return $this->render('DogMainBundle:Gallery:show.html.twig', $parameters);
+    }
+
+    public function navAction()
+    {
+        $parameters['galleries'] = $this->get('dog_main.gallery_manager')->findAll(
+            [
+                'a.published' => true,
             ],
             [
                 'a.translations' => 'translations',
             ]
         );
 
-        return $this->render('DogMainBundle:Gallery:show.html.twig', $parameters);
+        return $this->render('DogMainBundle:Gallery:nav.html.twig', $parameters);
     }
 }

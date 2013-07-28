@@ -21,6 +21,28 @@ class Gallery
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="GalleryImage", mappedBy="gallery")
+     */
+    protected $images;
+
+    public function __construct()
+    {
+        $this->images = new ArrayCollection;
+    }
+
+    public function getImages()
+    {
+        return $this->images;
+    }
+
+    public function setImages($images)
+    {
+        $this->images = $images;
+
+        return $this;
+    }
+
     public function getId()
     {
         return $this->id;

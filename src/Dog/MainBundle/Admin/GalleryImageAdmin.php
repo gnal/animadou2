@@ -11,7 +11,8 @@ class GalleryImageAdmin extends Admin
     public function buildGrid(GridBuilder $builder)
     {
         $builder
-            ->add('name')
+            ->add('published', 'boolean')
+            ->add('filename', 'image')
             ->add('', 'action')
         ;
     }
@@ -19,7 +20,7 @@ class GalleryImageAdmin extends Admin
     public function buildForm(FormBuilder $builder)
     {
         $builder
-            ->add('name')
+            ->add('file', 'file')
         ;
     }
 }

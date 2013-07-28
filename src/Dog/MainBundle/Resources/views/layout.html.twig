@@ -18,6 +18,10 @@ a {
     color: #3a87ad;
 }
 
+h1, h2, h3 {
+    margin-top: 10px;
+}
+
 h2 {
     font-family: Georgia;
     font-weight: normal;
@@ -64,7 +68,7 @@ h1 {
 #slider .slider-text {
     padding: 20px 15px;
     width: 300px;
-    height: 210px;
+    height: 240px;
     text-align: center;
 }
 
@@ -75,7 +79,7 @@ h1 {
 #slider .slider {
     position: relative;
     width: 700px;
-    height: 210px;
+    height: 240px;
 }
 
 #slider .slider li {
@@ -125,13 +129,16 @@ h1 {
                 <span class="text-muted">services de soins pour animaux de compagnie<span>
             </div>
             <div class="col-lg-6">
-                <div class="text-right">
-                    <i class="icon-phone icon-large"></i> 514.862.5382
+                <div class="text-right lead">
+                    <i class="icon-phone"></i> 514 862-5382
                 </div>
             </div>
         </div>
     </div>
     <div class="navbar navbar-inverse" style="margin-bottom: 0;">
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
+        </ul>
         <ul class="nav navbar-nav">
             <li><a href="{{ path('homepage') }}">Home</a></li>
             <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>

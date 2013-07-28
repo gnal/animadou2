@@ -41,7 +41,7 @@ class PageImage
     public function processFile($file)
     {
         $cutter = new Cutter($file);
-        $cutter->resize(640, 210)->save();
+        $cutter->resize(640, 240)->save();
     }
 
     public function getUploadFields()
