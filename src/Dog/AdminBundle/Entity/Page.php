@@ -1,9 +1,9 @@
 <?php
 
-namespace Acme\AppBundle\Entity;
+namespace Dog\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\AdminBundle\Entity\Page as BasePage;
+use Msi\AdminBundle\Model\Page as BasePage;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
@@ -19,17 +19,6 @@ class Page extends BasePage
     protected $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Block", mappedBy="pages")
-     */
-    protected $blocks;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Site")
-     * @ORM\JoinColumn(onDelete="CASCADE")
-     */
-    protected $site;
-
-    /**
      * @ORM\OneToMany(targetEntity="Dog\MainBundle\Entity\PageImage", mappedBy="page")
      */
     protected $images;
@@ -37,7 +26,7 @@ class Page extends BasePage
     public function __construct()
     {
         parent::__construct();
-        $this->images = new ArrayCollection;
+        $this->images = new ArrayCollection();
     }
 
     public function getImages()
@@ -51,4 +40,5 @@ class Page extends BasePage
 
         return $this;
     }
+
 }

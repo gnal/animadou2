@@ -21,7 +21,7 @@ class PageImage
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Acme\AppBundle\Entity\Page", inversedBy="images")
+     * @ORM\ManyToOne(targetEntity="Dog\AdminBundle\Entity\Page", inversedBy="images")
      * @ORM\JoinColumn(onDelete="CASCADE")
      */
     protected $page;

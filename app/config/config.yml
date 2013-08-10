@@ -71,7 +71,7 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: Acme\UserBundle\Entity\User
+    user_class: Msi\UserBundle\Entity\User
     group:
         group_class: Msi\UserBundle\Entity\Group
     registration:
@@ -83,10 +83,7 @@ fos_user:
 
 msi_admin:
     page_admin: Dog\AdminBundle\Admin\PageAdmin
-    site_class: Acme\AppBundle\Entity\Site
-    menu_class: Acme\AppBundle\Entity\Menu
-    page_class: Acme\AppBundle\Entity\Page
-    block_class: Acme\AppBundle\Entity\Block
+    page_class: Dog\AdminBundle\Entity\Page
     page_layouts:
         'DogMainBundle::layout.html.twig': 'Default'
         'MsiAdminBundle:Layout:blank.html.twig': 'Blank'

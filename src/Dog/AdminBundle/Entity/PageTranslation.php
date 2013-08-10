@@ -1,9 +1,9 @@
 <?php
 
-namespace Acme\AppBundle\Entity;
+namespace Dog\AdminBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Msi\AdminBundle\Entity\PageTranslation as BasePageTranslation;
+use Msi\AdminBundle\Model\PageTranslation as BasePageTranslation;
 
 /**
  * @ORM\Entity
@@ -27,18 +27,6 @@ class PageTranslation extends BasePageTranslation
      */
     protected $sliderContent;
 
-    public function getSliderTitle()
-    {
-        return $this->sliderTitle;
-    }
-
-    public function setSliderTitle($sliderTitle)
-    {
-        $this->sliderTitle = $sliderTitle;
-
-        return $this;
-    }
-
     public function getSliderContent()
     {
         return $this->sliderContent;
@@ -47,6 +35,18 @@ class PageTranslation extends BasePageTranslation
     public function setSliderContent($sliderContent)
     {
         $this->sliderContent = $sliderContent;
+
+        return $this;
+    }
+
+    public function getSliderTitle()
+    {
+        return $this->sliderTitle;
+    }
+
+    public function setSliderTitle($sliderTitle)
+    {
+        $this->sliderTitle = $sliderTitle;
 
         return $this;
     }
