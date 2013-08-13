@@ -17,10 +17,12 @@ if ( typeof Object.create !== 'function' ) {
             self.$carousel = self.$el.find('ul.carousel');
             self.options = $.extend({}, $.fn.msiSlider.options, options);
 
-            if (typeof self.options.carouselLiDimension === 'undefined') {
-                alert('MsiSlider: the option carouselLiDimension must be set. You must calculate padding, margin and border.');
-                return;
-            }
+            // if (typeof self.options.carouselLiDimension === 'undefined') {
+            //     alert('MsiSlider: the option carouselLiDimension must be set. You must calculate padding, margin and border.');
+            //     return;
+            // }
+
+            self.options.carouselLiDimension = self.$carousel.children().first().width();
 
             if (self.options.axis === 'x') {
                 self.carouselWrapDimension = self.$carousel.closest('div').width();
