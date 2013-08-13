@@ -1,6 +1,12 @@
-<h4>Galleries</h4>
+<h2>Galleries</h2>
 <ul class="list-unstyled">
 {% for gallery in galleries %}
-    <li><a href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">{{ gallery|truncate(20) }}</a></li>
+    <a href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}" class="media">
+        <img class="pull-left media-object" alt="0" src="{{ gallery.images.first ? gallery.images.first.pathname('filename', 't') : 'http://placehold.it/200x180' }}" style="width: 40px; height: 40px;">
+        <div class="media-body">
+            <h5 class="media-heading">{{ gallery|truncate(15) }}</h5>
+            <span class="badge">{{ gallery.images.count }}</span>
+        </div>
+    </a>
 {% endfor %}
 </ul>

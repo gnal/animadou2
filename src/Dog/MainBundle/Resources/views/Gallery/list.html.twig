@@ -7,22 +7,26 @@
             <a class="btn btn-small btn-info control control-prev" href="#"><i class="icon-chevron-left icon-large"></i></a>
             <a class="btn btn-small btn-info control control-next" data-direction=next href="#"><i class="icon-chevron-right icon-large"></i></a>
         </div>
-        <span>Galleries</span>
+        Galleries
     </h2>
     <div class="carousel-wrap">
         <ul class="carousel">
         {% for gallery in galleries %}
-            {% if loop.index == 1 or loop.index % 3 == 1 %}<li>{% endif %}
-            {% if loop.index == 1 or loop.index % 3 == 1 %}<div class="row">{% endif %}
+            {% if loop.index == 1 or loop.index % 6 == 1 %}<li>{% endif %}
+            {% if loop.index == 1 or loop.index % 6 == 1 %}<div class="row">{% endif %}
                 <a class="col-lg-4" href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">
                     <div>
-                        <img style="margin-bottom: 5px;" class="" src="http://placehold.it/250x200" alt="">
-                        <span class="pull-right badge">{{ gallery.images.count }}</span>
-                        {{ gallery|truncate(20) }}
+                        <p>
+                            <img src="{{ gallery.images.first ? gallery.images.first.pathname('filename', 't') : 'http://placehold.it/200x180' }}" alt="0">
+                        </p>
+                        <p>
+                            <span class="pull-right badge">{{ gallery.images.count }}</span>
+                            {{ gallery|truncate(20) }}
+                        </p>
                     </div>
                 </a>
-            {% if loop.index == galleries|length or loop.index % 3 == 0 %}</div>{% endif %}
-            {% if loop.index == galleries|length or loop.index % 3 == 0 %}</li>{% endif %}
+            {% if loop.index == galleries|length or loop.index % 6 == 0 %}</div>{% endif %}
+            {% if loop.index == galleries|length or loop.index % 6 == 0 %}</li>{% endif %}
         {% endfor %}
         </ul>
     </div>

@@ -11,58 +11,70 @@
 
 {% block body %}
 <div id="container" class="container">
-        <div class="header">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1><a href="{{ path('homepage') }}"><i class="icon-heart"></i> {{ block('brand') }}</a></h1>
-                    <small id="slogan" class="text-muted">{{ 'slogan'|trans }}</small>
-                </div>
-                <div class="col-lg-6">
-                    <div class="text-right lead">
-                        <i class="icon-phone"></i> 514 862-5382
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-inverse" style="margin-bottom: 0;">
-            <ul class="nav navbar-nav pull-right">
-                <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
-            </ul>
-            <ul class="nav navbar-nav">
-                <li><a href="{{ path('homepage') }}">Home</a></li>
-                <li><a href="{{ path('dog_main_service_list') }}">About Us</a></li>
-                <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
-                <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
-                <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
-                <li><a href="{{ path('dog_main_gallery_list') }}">Contact Us</a></li>
-            </ul>
-        </div>
+    <div class="header">
         <div class="row">
-            <div class="col-lg-12">
-                {# Slider #}
-                {% include 'DogMainBundle:Slider:slider.html.twig' %}
+            <div class="col-lg-6">
+                <h1><a href="{{ path('homepage') }}"><i class="icon-heart"></i> {{ block('brand') }}</a></h1>
+                <small id="slogan" class="text-muted">{{ 'slogan'|trans }}</small>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-right lead">
+                    <i class="icon-phone"></i> 514 862-5382
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="navbar navbar-inverse" style="margin-bottom: 0;">
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="{{ path('homepage') }}">Home</a></li>
+            <li><a href="{{ path('dog_main_service_list') }}">About Us</a></li>
+            <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
+            <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
+            <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
+            <li><a href="{{ path('dog_main_gallery_list') }}">Contact Us</a></li>
+        </ul>
+    </div>
+
+    {% if page.images.count %}
+    <div class="row">
+        <div class="col-lg-12">
+            {# Slider #}
+            {% include 'DogMainBundle:Slider:slider.html.twig' %}
+        </div>
+    </div>
+    {% endif %}
+
     <div class="content">
-        <div class="row">
+        {#<div class="row">
             <div class="col-lg-12">
                 {% block breadcrumb %}
                 {% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: []} %}
                 {% endblock %}
             </div>
-        </div>
+        </div>#}
         <div class="row">
             <div class="col-lg-9">
                 {% if block('title') %}
-                    <h2><span>{{ block('title') }}</span></h2>
+                    <h2>
+                        {% if block('actions') %}
+                        <div class="pull-right">
+                            {{ block('actions') }}
+                        </div>
+                        {% endif %}
+                        {{ block('title') }}
+                    </h2>
                 {% endif %}
                 {{ msi_block_render('content_top', page) }}
                 {{ block('page_content') }}
                 {{ msi_block_render('content_bottom', page) }}
             </div>
             <div class="col-lg-3">
-                <p class="lead"><a class="btn btn-block btn-large btn-info" href="#"><i class="icon-location-arrow icon-large"></i> DEVIS EXPRESS</a></p>
                 {{ block('sidebar') }}
+                {#<p class="lead"><a class="btn btn-block btn-large btn-info" href="#"><i class="icon-location-arrow icon-large"></i> DEVIS EXPRESS</a></p>#}
             </div>
         </div>
     </div>

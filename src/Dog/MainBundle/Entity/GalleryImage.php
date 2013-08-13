@@ -13,6 +13,7 @@ class GalleryImage
     use \Msi\AdminBundle\Doctrine\Extension\Model\Uploadable;
     use \Msi\AdminBundle\Doctrine\Extension\Model\Publishable;
     use \Msi\AdminBundle\Doctrine\Extension\Model\Timestampable;
+    use \Msi\AdminBundle\Doctrine\Extension\Model\Sortable;
 
     /**
      * @ORM\Column(type="integer")
@@ -32,18 +33,18 @@ class GalleryImage
      */
     protected $filename;
 
-    protected $file;
+    protected $filenameFile;
 
-    public function processFile($file)
+    public function processFilename($file)
     {
         $cutter = new Cutter($file);
         $cutter->resizeProp(600)->save();
-        $cutter->resize(146, 100)->save('t');
+        $cutter->resize(200, 180)->save('t');
     }
 
     public function getUploadFields()
     {
-        return ['file' => 'filename'];
+        return ['filename'];
     }
 
     public function getUploadDirSuffix()
@@ -75,14 +76,14 @@ class GalleryImage
         return $this;
     }
 
-    public function getFile()
+    public function getFilenameFile()
     {
-        return $this->file;
+        return $this->filenameFile;
     }
 
-    public function setFile($file)
+    public function setFilenameFile($filenameFile)
     {
-        $this->file = $file;
+        $this->filenameFile = $filenameFile;
         $this->updatedAt = new \DateTime();
 
         return $this;

@@ -23,6 +23,7 @@ class Gallery
 
     /**
      * @ORM\OneToMany(targetEntity="GalleryImage", mappedBy="gallery")
+     * @ORM\OrderBy({"position" = "ASC"})
      */
     protected $images;
 

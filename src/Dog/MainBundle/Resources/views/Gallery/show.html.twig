@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block sidebar %}
-{{ render(controller('DogMainBundle:Gallery:nav')) }}
+{{ render(controller('DogMainBundle:Gallery:nav', {active: gallery.id})) }}
 {% endblock %}
 
 {% block title %}{{ gallery }}{% endblock %}

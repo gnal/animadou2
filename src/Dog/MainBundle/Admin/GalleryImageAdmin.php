@@ -20,7 +20,7 @@ class GalleryImageAdmin extends Admin
     public function buildForm(FormBuilder $builder)
     {
         $builder
-            ->add('file', 'file')
+            ->add('filenameFile', 'file')
         ;
     }
 }
