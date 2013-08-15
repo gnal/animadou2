@@ -29,16 +29,11 @@ class PageImage
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    protected $href;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
     protected $filename;
 
-    protected $file;
+    protected $filenameFile;
 
-    public function processFile($file)
+    public function processFilename($file)
     {
         $cutter = new Cutter($file);
         $cutter->resize(640, 240)->save();
@@ -46,24 +41,12 @@ class PageImage
 
     public function getUploadFields()
     {
-        return ['file' => 'filename'];
+        return ['filename'];
     }
 
     public function getUploadDirSuffix()
     {
         return $this->getPage()->getId();
-    }
-
-    public function getHref()
-    {
-        return $this->href;
-    }
-
-    public function setHref($href)
-    {
-        $this->href = $href;
-
-        return $this;
     }
 
     public function getFilename()
@@ -78,14 +61,14 @@ class PageImage
         return $this;
     }
 
-    public function getFile()
+    public function getFilenameFile()
     {
-        return $this->file;
+        return $this->filenameFile;
     }
 
-    public function setFile($file)
+    public function setFilenameFile($filenameFile)
     {
-        $this->file = $file;
+        $this->filenameFile = $filenameFile;
         $this->updatedAt = new \DateTime();
 
         return $this;

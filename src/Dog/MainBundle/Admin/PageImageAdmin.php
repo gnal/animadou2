@@ -8,6 +8,13 @@ use Symfony\Component\Form\FormBuilder;
 
 class PageImageAdmin extends Admin
 {
+    public function configure()
+    {
+        $this->options = [
+            'uploadify' => true,
+        ];
+    }
+
     public function buildGrid(GridBuilder $builder)
     {
         $builder
@@ -19,8 +26,7 @@ class PageImageAdmin extends Admin
     public function buildForm(FormBuilder $builder)
     {
         $builder
-            ->add('file', 'file')
-            ->add('href')
+            ->add('filenameFile', 'file')
         ;
     }
 }

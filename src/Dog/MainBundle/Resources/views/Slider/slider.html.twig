@@ -9,7 +9,7 @@
         <div class="col-md-8" style="width: 670px;">
             <ul class="slider list-unstyled">
                 {% for image in page.images %}
-                    <li>{% if image.href %}<a href="{{ image.href }}">{% endif %}<img class="hide" onload="nl(this);" src="{{ image.pathname('filename') }}" alt="0">{% if image.href %}</a>{% endif %}</li>
+                    <li><img class="hide" onload="nl(this);" src="{{ image.pathname('filename') }}" alt="0"></li>
                 {% endfor %}
             </ul>
             <ul class="carousel list-unstyled">

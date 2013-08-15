@@ -14,7 +14,7 @@
     <div class="header">
         <div class="row">
             <div class="col-md-6">
-                <h1><a href="{{ path('homepage') }}"><i class="icon-spin icon-heart"></i> {{ block('brand') }}</a></h1>
+                <h1><a href="{{ path('homepage') }}"><i class="icon-heart"></i> {{ block('brand') }}</a></h1>
                 <small id="slogan">{{ 'slogan'|trans }}</small>
             </div>
             <div class="col-md-6">
@@ -80,6 +80,7 @@
             {% endif %}
         </div>
     </div>
+
     <div class="content">
         <div class="row">
             <div class="col-md-4">
@@ -90,35 +91,31 @@
             </div>
             <div class="col-md-4">
                 <div class="well">
-                    <h4>Lorem ipsum</h4>
-                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+                    <h4>Animal charity that we support</h4>
+                    SPCA
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="well">
-                    <h4>Lorem ipsum</h4>
-                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
+                    <h4>Contact</h4>
+                <p>
+                    514.826.5695
+                    <br>
+                    <a href="mailto:info@animadou.com">info@animadou.com</a>
+                </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div id="footer">
-    <div class="container">
+
+<div class="container">
+    <div class="content">
         <div class="row">
-            <div class="col-md-2">
-                <h4>{{ site.translation.brand }}</h4>
-                <p>
-                    We love to love your dogs.
-                </p>
-            </div>
-            <div class="col-md-2 col-offset-1">
+            <div class="col-md-4">
                 {{ render(controller('DogMainBundle:Service:nav')) }}
             </div>
-            <div class="col-md-2">
-                {{ render(controller('DogMainBundle:Package:nav')) }}
-            </div>
-            <div class="col-md-2">
+            <div class="col-md-4">
                 <h4>Autres</h4>
                 <ul class="list-unstyled">
                     <li><a href="#">Nam bibendum ipsum</a></li>
@@ -128,7 +125,7 @@
                     <li><a href="#">Nam bibendum ipsum</a></li>
                 </ul>
             </div>
-            <div class="col-md-2 col-offset-1">
+            <div class="col-md-4">
                 <h4>Contact</h4>
                 <p>
                     514.826.5695
@@ -137,9 +134,11 @@
                 </p>
             </div>
         </div>
-        <hr>
-        <p class="text-center muted" style="margin-bottom: 20px;">&copy; {{ 'now'|date('Y') }} {{ block('brand') }}</p>
     </div>
+</div>
+
+<div class="container">
+    <p class="text-muted" style="margin-bottom: 5px;"><small>&copy; {{ 'now'|date('Y') }} {{ block('brand')|upper }}</small></p>
 </div>
 {% endblock body %}
 
