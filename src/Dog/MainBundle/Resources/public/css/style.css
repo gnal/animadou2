@@ -4,7 +4,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #CECFCE;
+    background: #CCDDDD;
 }
 
 img {
@@ -16,7 +16,7 @@ img {
 }
 
 a {
-    color: #4E9CB5;
+    color: #4A7B6F;
 }
 
 a:hover {
@@ -29,21 +29,38 @@ h1, h2, h3, h4, h5, h6 {
     margin: 10px 0 20px;
 }
 
+.header {
+    /*background: #EEEEE7;*/
+    background: #fff;
+    padding: 15px 15px 15px;
+    position: relative;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    z-index: 9999;
+    /*background: #EEEEE7;*/
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 10px 10px;
+    box-shadow: 3px 3px 6px #333;
+}
+
 h1 {
     margin: 0;
 }
 
 h1 a {
-    color: #333 !important;
+    color: #4A7B6F !important;
     text-decoration: none !important;
     font-family: 'Aclonica', sans-serif;
     font-weight: bold;
-    /*text-shadow: 2px 2px 1px #000;*/
     font-size: 115%;
 }
 
 h1 i {
-    color: #4E9CB5;
+    color: #4A7B6F;
 }
 
 blockquote {
@@ -64,13 +81,8 @@ blockquote i.icon-quote-right {
     right: 7px;
 }
 
-#slogan {
-    border-top: 1px dotted #333;
-    position: absolute;
-    left: 59px;
-}
-
 .content {
+    /*background: #EEEEE7;*/
     background: #fff;
     padding: 15px;
     margin-bottom: 5px;
@@ -113,7 +125,7 @@ h2 {
 }
 
 /*h2 span {
-    border-bottom: 4px solid #4E9CB5    ;
+    border-bottom: 4px solid #4A7B6F    ;
     padding-right: 15px;
 }*/
 
@@ -125,38 +137,34 @@ h4 {
 }
 
 /*h4 span {
-    border-bottom: 4px solid #4E9CB5    ;
+    border-bottom: 4px solid #4A7B6F    ;
     padding-right: 15px;
     padding-bottom: 8px;
 }*/
 
-.header {
-    background: #fff;
-    padding: 30px 15px 41px;
-}
-
 .navbar.navbar-inverse {
     border-radius: 0;
-    background: #4E9CB5 ;
+    background: #4A7B6F ;
     border: 0;
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav>li>a {
     color: #fff;
     text-transform: uppercase;
+    /*font-size: 13px;*/
 }
 
 .btn-info {
-    background: #4E9CB5 ;
-    border-color: #4E9CB5   ;
+    background: #4A7B6F ;
+    border-color: #4A7B6F   ;
 }
 
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active,
 .btn-info.active {
-    background: #4E9CB5 ;
-    border-color: #4E9CB5   ;
+    background: #4A7B6F ;
+    border-color: #4A7B6F   ;
 }
 
 #slider {
