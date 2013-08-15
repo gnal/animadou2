@@ -22,7 +22,11 @@ if ( typeof Object.create !== 'function' ) {
             //     return;
             // }
 
-            self.options.carouselLiDimension = self.$carousel.children().first().width();
+            if (self.options.axis === 'x') {
+                self.options.carouselLiDimension = self.$carousel.children().first().width();
+            } else {
+                self.options.carouselLiDimension = self.$carousel.children().first().height();
+            }
 
             if (self.options.axis === 'x') {
                 self.carouselWrapDimension = self.$carousel.closest('div').width();

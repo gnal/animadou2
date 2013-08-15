@@ -8,6 +8,13 @@ use Symfony\Component\Form\FormBuilder;
 
 class GalleryImageAdmin extends Admin
 {
+    public function configure()
+    {
+        $this->options = [
+            'uploadify' => true,
+        ];
+    }
+
     public function buildGrid(GridBuilder $builder)
     {
         $builder

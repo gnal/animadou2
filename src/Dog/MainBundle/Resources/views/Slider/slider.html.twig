@@ -1,12 +1,12 @@
 <div id="slider">
     <div class="row">
-        <div class="col-lg-4" style="width: 300px;">
+        <div class="col-md-4" style="width: 300px;">
             <div class="slider-text">
                 <p class="lead">{{ page.translation.sliderTitle }}</p>
                 {{ page.translation.sliderContent }}
             </div>
         </div>
-        <div class="col-lg-8" style="width: 670px;">
+        <div class="col-md-8" style="width: 670px;">
             <ul class="slider list-unstyled">
                 {% for image in page.images %}
                     <li>{% if image.href %}<a href="{{ image.href }}">{% endif %}<img class="hide" onload="nl(this);" src="{{ image.pathname('filename') }}" alt="0">{% if image.href %}</a>{% endif %}</li>

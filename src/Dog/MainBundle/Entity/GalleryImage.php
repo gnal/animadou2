@@ -39,7 +39,7 @@ class GalleryImage
     {
         $cutter = new Cutter($file);
         $cutter->resizeProp(600)->save();
-        $cutter->resize(200, 180)->save('t');
+        $cutter->resize(300, 180)->save('t');
     }
 
     public function getUploadFields()

@@ -12,21 +12,20 @@
     <div class="carousel-wrap">
         <ul class="carousel">
         {% for gallery in galleries %}
-            {% if loop.index == 1 or loop.index % 6 == 1 %}<li>{% endif %}
-            {% if loop.index == 1 or loop.index % 6 == 1 %}<div class="row">{% endif %}
-                <a class="col-lg-4" href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">
+            {% if loop.index == 1 or loop.index % 8 == 1 %}<li>{% endif %}
+            {% if loop.index == 1 or loop.index % 8 == 1 %}<div class="row">{% endif %}
+                <a class="col-md-3" href="{{ path('dog_main_gallery_show', {gallery: gallery.translation.slug}) }}">
                     <div>
                         <p>
-                            <img src="{{ gallery.images.first ? gallery.images.first.pathname('filename', 't') : 'http://placehold.it/200x180' }}" alt="0">
+                            <img class="img-thumbnail" src="{{ gallery.images.first ? gallery.images.first.pathname('filename', 't') : 'http://placehold.it/300x180' }}" alt="0">
                         </p>
-                        <p>
-                            <span class="pull-right badge">{{ gallery.images.count }}</span>
-                            {{ gallery|truncate(20) }}
+                        <p style="margin-bottom: 0;">
+                            {{ gallery|truncate(20) }} ({{ gallery.images.count }})
                         </p>
                     </div>
                 </a>
-            {% if loop.index == galleries|length or loop.index % 6 == 0 %}</div>{% endif %}
-            {% if loop.index == galleries|length or loop.index % 6 == 0 %}</li>{% endif %}
+            {% if loop.index == galleries|length or loop.index % 8 == 0 %}</div>{% endif %}
+            {% if loop.index == galleries|length or loop.index % 8 == 0 %}</li>{% endif %}
         {% endfor %}
         </ul>
     </div>
@@ -39,10 +38,6 @@
         label: block('title')
     }
 ]} %}
-{% endblock %}
-
-{% block sidebar %}
-{{ render(controller('DogMainBundle:Gallery:nav')) }}
 {% endblock %}
 
 {% block js %}
