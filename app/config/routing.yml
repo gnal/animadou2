@@ -31,13 +31,17 @@ fos_user_change_password:
 
 # msi_admin
 
-msi_admin_routing:
-    resource: "@MsiAdminBundle/Resources/config/routing/routing.yml"
-    prefix: /
-
 msi_admin_loader:
     resource: .
     type: msi_admin
+
+msi_admin:
+    resource: "@MsiAdminBundle/Resources/config/routing.yml"
+    prefix: /
+
+msi_cms:
+    resource: "@MsiCmsBundle/Resources/config/routing.yml"
+    prefix: /
 
 # overrides
 

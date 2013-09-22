@@ -7,6 +7,10 @@ body {
     background: #CCDDDD;
 }
 
+.container {
+    max-width: 970px;
+}
+
 img {
     width: auto\9;
     height: auto;
@@ -79,6 +83,10 @@ blockquote i.icon-quote-right {
     position: absolute;
     bottom: 25px;
     right: 7px;
+}
+
+#content {
+    padding-top: 30px;
 }
 
 .content {

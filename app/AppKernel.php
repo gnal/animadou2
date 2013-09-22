@@ -25,11 +25,14 @@ class AppKernel extends Kernel
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 
             new Msi\AdminBundle\MsiAdminBundle(),
+            new Msi\CmsBundle\MsiCmsBundle(),
             new Msi\UserBundle\MsiUserBundle(),
 
             new Acme\AppBundle\AcmeAppBundle(),
             new Dog\MainBundle\DogMainBundle(),
-            new Dog\AdminBundle\DogAdminBundle(),
+            // new Dog\AdminBundle\DogAdminBundle(),
+            new Dog\UserBundle\DogUserBundle(),
+            new Dog\CmsBundle\DogCmsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

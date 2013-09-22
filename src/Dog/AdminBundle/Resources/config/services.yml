@@ -1,7 +1,0 @@
-parameters:
-#    dog_admin.example.class: Dog\AdminBundle\Example
-
-services:
-#    dog_admin.example:
-#        class: %dog_admin.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

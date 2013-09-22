@@ -1,0 +1,3 @@
+dog_cms_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DogCmsBundle:Default:index }

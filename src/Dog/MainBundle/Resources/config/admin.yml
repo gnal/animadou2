@@ -1,35 +1,4 @@
 services:
-    # PageImage
-    dog_main_page_image_admin:
-        class: Dog\MainBundle\Admin\PageImageAdmin
-        arguments: [ @dog_main.page_image_manager ]
-        parent: msi_admin.admin
-        tags:
-            - { name: msi.admin }
-        calls:
-            - [ setParent, [ @msi_admin_page_admin ] ]
-
-    dog_main.page_image_manager:
-        class: %msi_admin.manager.class%
-        arguments: [ Dog\MainBundle\Entity\PageImage ]
-        parent: msi_admin.manager
-
-    # Page
-    msi_admin_page_admin:
-        class: %msi_admin.page.admin%
-        arguments: [ @msi_admin.page_manager ]
-        parent: msi_admin.admin
-        tags:
-            - { name: msi.admin }
-        calls:
-            - [addChild, [@msi_admin_block_admin]]
-            - [addChild, [@dog_main_page_image_admin]]
-
-    msi_admin.page_manager:
-        class: Msi\AdminBundle\Manager\PageManager
-        arguments: [ %msi_admin.page.class% ]
-        parent: msi_admin.manager
-
     # Gallery
     dog_main_gallery_admin:
         class: Dog\MainBundle\Admin\GalleryAdmin

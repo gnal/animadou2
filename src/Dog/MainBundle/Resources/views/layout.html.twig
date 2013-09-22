@@ -5,6 +5,7 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ asset('bundles/msiadmin/css/base.css') }}">
 <link rel="stylesheet" href="{{ asset('bundles/dogmain/css/style.css') }}">
 {{ parent() }}
 {% endblock %}
@@ -39,16 +40,7 @@
         </ul>
     </div>
 
-    {% if page.images.count %}
-    <div class="row">
-        <div class="col-md-12">
-            {# Slider #}
-            {% include 'DogMainBundle:Slider:slider.html.twig' %}
-        </div>
-    </div>
-    {% endif %}
-
-    <div class="content">
+    <div id=content class="content">
         {#<div class="row">
             <div class="col-md-12">
                 {% block breadcrumb %}

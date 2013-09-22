@@ -1,6 +1,6 @@
 <?php
 
-namespace Dog\AdminBundle\Tests\Controller;
+namespace Dog\CmsBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
