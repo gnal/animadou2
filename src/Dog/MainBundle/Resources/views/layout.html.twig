@@ -30,14 +30,15 @@
         {#<ul class="nav navbar-nav pull-right">
             <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
         </ul>#}
-        <ul class="nav navbar-nav navbar-right">
+        {#<ul class="nav navbar-nav navbar-right">
             <li><a href="{{ path('homepage') }}">Home</a></li>
             <li><a href="{{ path('dog_main_service_list') }}">About Us</a></li>
             <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
             <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
             <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
             <li><a href="{{ path('dog_main_gallery_list') }}">Contact Us</a></li>
-        </ul>
+        </ul>#}
+        {{ knp_menu_render('DogMainBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
     </div>
 
     <div id=content class="content">
