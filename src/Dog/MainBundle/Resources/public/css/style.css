@@ -44,14 +44,17 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 9999;
     background: #fff;
     border-radius: 0 0 6px 6px;
-    padding: 25px 15px 10px;
-    -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    padding: 25px 28px 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 #sidebar {
     background: #BFD9DA;
     padding: 15px;
+    border-radius: 6px;
+    /*-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
 }
 
 #sidebar a {
@@ -87,6 +90,9 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0.9;
     position: relative;
     background: #222;
+
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cool:hover {
@@ -139,13 +145,15 @@ blockquote i.icon-quote-right {
 }
 
 #content {
-    padding-top: 30px;
+    padding-top: 35px;
 }
 
 .content {
     background: #fff;
     padding: 15px;
     margin-bottom: 5px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .breadcrumb {
@@ -210,11 +218,13 @@ h4 {
     border-radius: 0;
     background: #222 ;
     border: 0;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav>li>a {
     color: #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     /*font-size: 13px;*/
 }
 

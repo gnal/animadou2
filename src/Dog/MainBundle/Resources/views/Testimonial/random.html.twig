@@ -1,3 +1,4 @@
+<h4><a href="{{ path('dog_main_service_list') }}">Témoignages</a></h4>
 {% for testimonial in testimonials %}
 <blockquote{% if loop.index == testimonials|length %} style="margin-bottom: 0;"{% endif %}><i class="icon-large icon-quote-left icon-muted"></i>{{ testimonial.translation.content|striptags }}<i class="icon-large icon-quote-right icon-muted"></i><small>{{ testimonial.name }}</small>
 </blockquote>
