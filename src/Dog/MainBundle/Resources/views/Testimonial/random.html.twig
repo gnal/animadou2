@@ -1,4 +1,4 @@
 {% for testimonial in testimonials %}
-<blockquote><i class="icon-large icon-quote-left icon-muted"></i>{{ testimonial.translation.content|striptags }}<i class="icon-large icon-quote-right icon-muted"></i><small>{{ testimonial.name }}</small>
+<blockquote{% if loop.index == testimonials|length %} style="margin-bottom: 0;"{% endif %}><i class="icon-large icon-quote-left icon-muted"></i>{{ testimonial.translation.content|striptags }}<i class="icon-large icon-quote-right icon-muted"></i><small>{{ testimonial.name }}</small>
 </blockquote>
 {% endfor %}
