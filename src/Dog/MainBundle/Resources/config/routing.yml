@@ -29,3 +29,7 @@ dog_main_gallery_list:
 dog_main_gallery_show:
     pattern:  /albums/{gallery}.html
     defaults: { _controller: DogMainBundle:Gallery:show }
+
+dog_main_contact_contact:
+    pattern:  /contact
+    defaults: { _controller: DogMainBundle:Contact:contact }

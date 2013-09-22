@@ -51,7 +51,7 @@
         </div>#}
         <div class="row">
             <div class="col-md-{% if block('sidebar') %}9{% else %}12{% endif %}">
-                {% if block('title') %}
+                {#{% if block('title') %}
                     <h2>
                         {% if block('actions') %}
                         <div class="pull-right">
@@ -60,6 +60,9 @@
                         {% endif %}
                         {{ block('title') }}
                     </h2>
+                {% endif %}#}
+                {% if page.showTitle %}
+                    <h2 class="text-muted">{{ page.translation.title }}</h2>
                 {% endif %}
                 {{ msi_block_render('content_top', page) }}
                 {{ block('page_content') }}
