@@ -1,7 +1,3 @@
-html {
-    overflow-y: scroll;
-}
-
 body {
     font-family: 'Open Sans', sans-serif;
     background: #CCDDDD;
@@ -51,6 +47,27 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }
 
+#sidebar {
+    background: #CCDDDD;
+    padding: 15px;
+}
+
+#sidebar h4 {
+    border-bottom: 2px solid #4A7B6F;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+#sidebar ul {
+    margin-bottom: 0;
+}
+
+#sidebar ul li a {
+    display: block;
+    border-bottom: 1px solid #4A7B6F;
+    padding: 10px 0;
+}
+
 h1 {
     margin: 0;
 }
@@ -90,7 +107,6 @@ blockquote i.icon-quote-right {
 }
 
 .content {
-    /*background: #EEEEE7;*/
     background: #fff;
     padding: 15px;
     margin-bottom: 5px;

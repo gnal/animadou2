@@ -3,9 +3,11 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-<ul>
+<p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue. In erat lacus, vestibulum quis pulvinar a, placerat sed tortor. Proin pellentesque nibh nulla. Donec elit nunc, iaculis ac interdum sed, lacinia quis tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed malesuada enim ut lectus sagittis facilisis.</p>
+<hr>
+<ul class="icons-ul list-unstyled" style="font-size: 18px;">
 {% for service in services %}
-    <li><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service }}</a></li>
+    <li><span class="icon-li icon-plus"></span><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service }}</a></li>
 {% endfor %}
 </ul>
 {% endblock %}
