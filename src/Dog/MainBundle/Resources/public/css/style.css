@@ -1,3 +1,5 @@
+/*http://www.colorcombos.com/color-schemes/133/ColorCombo133.html*/
+
 body {
     font-family: 'Open Sans', sans-serif;
     background: #BFD9DA;
@@ -42,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 9999;
     background: #fff;
     border-radius: 0 0 6px 6px;
-    padding: 25px 10px 10px;
+    padding: 25px 15px 10px;
     -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
 }

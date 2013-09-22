@@ -3,13 +3,25 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-<p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue. In erat lacus, vestibulum quis pulvinar a, placerat sed tortor. Proin pellentesque nibh nulla. Donec elit nunc, iaculis ac interdum sed, lacinia quis tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed malesuada enim ut lectus sagittis facilisis.</p>
+<p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
 <hr>
-<ul class="icons-ul list-unstyled" style="font-size: 18px;">
+{#<ul class="icons-ul list-unstyled" style="font-size: 18px;">
 {% for service in services %}
     <li><span class="icon-li icon-plus"></span><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service }}</a></li>
 {% endfor %}
-</ul>
+</ul>#}
+{% for service in services %}
+    {% if loop.index == 1 or loop.index % 3 == 1 %}<div class="row">{% endif %}
+        <div class="col-md-4">
+            <a style="display: block; border: 1px solid #333; margin-bottom: 20px;" href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">
+                <img src="http://placekitten.com/g/300/75" alt="0">
+                <div style="padding: 10px;">
+                    <strong>{{ service }}</strong>
+                </div>
+            </a>
+        </div>
+    {% if loop.index == services|length or loop.index % 3 == 0 %}</div>{% endif %}
+{% endfor %}
 {% endblock %}
 
 {% block breadcrumb %}
