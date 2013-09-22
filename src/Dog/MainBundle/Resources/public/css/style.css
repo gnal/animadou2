@@ -34,21 +34,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
-    /*background: #EEEEE7;*/
     background: #fff;
-    padding: 15px 15px 15px;
+    padding: 8px 15px;
     position: relative;
 }
 
 #logo {
     position: absolute;
-    top: 10px;
+    top: 0;
     z-index: 9999;
-    /*background: #EEEEE7;*/
     background: #fff;
-    border-radius: 6px;
-    padding: 20px 10px 10px;
-    box-shadow: 3px 3px 6px #333;
+    border-radius: 0 0 6px 6px;
+    padding: 25px 10px 10px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 h1 {
