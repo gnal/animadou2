@@ -13,10 +13,10 @@
 {% for service in services %}
     {% if loop.index == 1 or loop.index % 3 == 1 %}<div class="row">{% endif %}
         <div class="col-md-4">
-            <a style="display: block; border: 1px solid #333; margin-bottom: 20px;" href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">
-                <img src="http://placekitten.com/g/300/75" alt="0">
-                <div style="padding: 10px;">
-                    <strong>{{ service }}</strong>
+            <a class="cool" href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">
+                <img src="http://placekitten.com/g/300/130" alt="0">
+                <div class="parasite">
+                    {{ service }}
                 </div>
             </a>
         </div>

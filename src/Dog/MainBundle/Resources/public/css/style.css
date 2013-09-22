@@ -78,6 +78,32 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 0;
 }
 
+.cool {
+    display: block;
+    border: 1px solid #fff;
+    margin-bottom: 20px;
+    border-radius: 4px 4px 4px 4px;
+    padding: 1px;
+    opacity: 0.9;
+    position: relative;
+    background: #222;
+}
+
+.cool:hover {
+    border: 1px solid #fff;
+    opacity: 1;
+}
+
+.parasite {
+    position: absolute;
+    padding: 10px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: #222;
+    color: #fff;
+}
+
 h1 {
     margin: 0;
 }
