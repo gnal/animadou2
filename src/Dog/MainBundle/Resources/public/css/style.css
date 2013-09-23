@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #logo {
     position: absolute;
-    top: -5px;
+    top: 0px;
     /*left: 0;*/
     z-index: 9999;
     background: #fff;
@@ -54,6 +54,8 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #5595a7;
+    border-width: 0 1px 1px;
 }
 
 #sidebar {
