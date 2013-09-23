@@ -20,6 +20,16 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-right">
+                <a class="label label-info" href="#">CALL NOW FOR A FREE HAMSTER!</a>
+                |
+                <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+                    <small>Testimonials</small>
+                </a>
+                |
+                <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+                    <small>FAQ</small>
+                </a>
+                |
                 <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
                     <small>{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</small>
                 </a>
