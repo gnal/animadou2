@@ -41,12 +41,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: 8px 15px;
     position: relative;
     margin: 5px 0;
+    border: 1px solid #5595a7;
 }
 
 #logo {
     position: absolute;
     top: -5px;
-    /*left: 0;*/
+    left: 0;
     z-index: 9999;
     background: #fff;
     /*border-radius: 0 0 6px 6px;*/
@@ -173,6 +174,7 @@ blockquote i.icon-quote-right {
     margin-bottom: 5px;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid #5595a7;
 }
 
 .breadcrumb {
@@ -236,18 +238,16 @@ h4 {
 
 .navbar.navbar-inverse {
     border-radius: 0;
-    background: #222;
-    border: 0;
-    /*-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
-    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
-    /*border-bottom: 1px solid #7abfce;*/
-    /*border-top: 1px solid #7abfce;*/
+    background: #fff;
+    border: 1px solid #5595a7;
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav>li>a {
-    color: #fff;
-    /*text-transform: uppercase;*/
-    /*font-size: 13px;*/
+    color: #333;
+}
+
+.navbar-inverse .brand, .navbar-inverse .nav>li>a:hover {
+    color: #333;
 }
 
 #slider {
