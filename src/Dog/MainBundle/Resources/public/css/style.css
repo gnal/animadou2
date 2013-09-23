@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background: #BFD9DA;
+    background: #7abfce;
 }
 
 .container {
@@ -87,14 +87,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #sidebar ul li a {
     display: block;
-    border-bottom: 1px dashed #eee;
-    padding: 10px 0;
+    border-bottom: 1px dotted #eee;
+    padding: 5px 0;
 }
 
 .cool-sidebar {
-    background: #BFD9DA;
+    background: #5595a7;
+    /*background: #42aec2;*/
     padding: 15px 15px 15px;
-    border: 1px dashed #eee;
+    color: #fff;
+    /*border: 1px dashed #eee;*/
 }
 
 .cool {
@@ -238,8 +240,8 @@ h4 {
     border: 0;
     /*-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
     /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);*/
-    /*border-bottom: 1px solid #BFD9DA;*/
-    /*border-top: 1px solid #BFD9DA;*/
+    /*border-bottom: 1px solid #7abfce;*/
+    /*border-top: 1px solid #7abfce;*/
 }
 
 .navbar-inverse .brand, .navbar-inverse .nav>li>a {
