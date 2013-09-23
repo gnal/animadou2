@@ -19,8 +19,8 @@
             <div class="pull-right text-muted" style="border-top: 1px solid #eee; position: absolute; right: 15px; bottom: 12px;"><small>{{ 'slogan'|trans }}</small></div>
         </div>
         <div class="row">
-            <div class="col-md-12">
-                <a class="pull-right" href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
+            <div class="col-md-12 text-right">
+                <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
                     <small>{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</small>
                 </a>
             </div>
@@ -107,7 +107,7 @@
             </div>
         </div>
     </div>#}
-    <p style="margin-bottom: 5px;"><small>&copy; {{ 'now'|date('Y') }} {{ block('brand')|upper }}</small></p>
+    <p style="margin-bottom: 5px; color: #fff;"><small>&copy; {{ 'now'|date('Y') }} {{ block('brand')|upper }}</small></p>
 </div>
 {#<div class="container">
     <div class="content">
