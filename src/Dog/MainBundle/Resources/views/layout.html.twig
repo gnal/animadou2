@@ -14,8 +14,9 @@
 <div class="container">
     <div class="header">
         <div id="logo">
-            <h1><a href="{{ path('homepage') }}">{{ block('brand') }}</a></h1>
-            <div class="pull-right text-muted" style="border-top: 1px solid #eee"><small>{{ 'slogan'|trans }}</small></div>
+            <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/dogmain/images/logo.png') }}" alt="0"></a>
+            <br>
+            <div class="pull-right text-muted" style="border-top: 1px solid #eee; position: absolute; right: 15px; bottom: 12px;"><small>{{ 'slogan'|trans }}</small></div>
         </div>
         <div class="row">
             <div class="col-md-12">
@@ -138,7 +139,6 @@
 
 {% block js %}
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
 <script src="/bundles/dogmain/vendor/msi-slider/js/msi-slider.js"></script>
 <script src="/bundles/dogmain/vendor/hinclude/hinclude.js"></script>
