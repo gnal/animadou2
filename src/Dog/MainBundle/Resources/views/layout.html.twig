@@ -1,147 +1,69 @@
 {% extends 'MsiAdminBundle:Page:layout.html.twig' %}
 
 {% block css %}
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ asset('bundles/msiadmin/vendor/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('bundles/msiadmin/vendor/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="{{ asset('bundles/msiadmin/css/base.css') }}">
 <link rel="stylesheet" href="{{ asset('bundles/dogmain/css/style.css') }}">
 {{ parent() }}
 {% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="header">
-        <div id="logo">
-            <a href="{{ path('homepage') }}"><img src="{{ asset('bundles/dogmain/images/logo.png') }}" alt="0"></a>
-            <br>
-            <div class="pull-right" style="border-top: 1px solid #eee; position: absolute; right: 15px; bottom: 12px;"><small>{{ 'slogan'|trans }}</small></div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 text-right">
-                <a class="label label-info" href="#">CALL IN THE NEXT 30 MINUTES AND GET A FREE HAMSTER!</a>
-                |
-                <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
-                    <small>FAQ</small>
-                </a>
-                |
-                <a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">
-                    <small>{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</small>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="navbar navbar-inverse" style="margin-bottom: 0;">
-        {#<ul class="nav navbar-nav pull-right">
-            <li><a href="{{ path('homepage', {_locale: app.request.locale == 'fr' ? 'en' : 'fr'}) }}">{{ app.request.locale == 'fr' ? 'English' : 'Français' }}</a></li>
-        </ul>#}
-        {#<ul class="nav navbar-nav navbar-right">
-            <li><a href="{{ path('homepage') }}">Home</a></li>
-            <li><a href="{{ path('dog_main_service_list') }}">About Us</a></li>
-            <li><a href="{{ path('dog_main_service_list') }}">Services</a></li>
-            <li><a href="{{ path('dog_main_gallery_list') }}">Photos</a></li>
-            <li><a href="{{ path('dog_main_testimonial_list') }}">Témoignages</a></li>
-            <li><a href="{{ path('dog_main_gallery_list') }}">Contact Us</a></li>
-        </ul>#}
-        {{ knp_menu_render('DogMainBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
-    </div>
-
-    <div id=content class="content">
-        {#<div class="row">
-            <div class="col-md-12">
-                {% block breadcrumb %}
-                {% include 'DogMainBundle::breadcrumb.html.twig' with {crumbs: []} %}
-                {% endblock %}
-            </div>
-        </div>#}
-        <div class="row">
-            <div class="col-md-{% if block('sidebar') %}8{% else %}12{% endif %}">
-                {#{% if block('title') %}
-                    <h2>
-                        {% if block('actions') %}
-                        <div class="pull-right">
-                            {{ block('actions') }}
-                        </div>
-                        {% endif %}
-                        {{ block('title') }}
-                    </h2>
-                {% endif %}#}
-                {% if page.showTitle %}
-                    <h2 class="text-muted">{{ page.translation.title ?: block('title') }}</h2>
-                {% endif %}
-                {{ msi_block_render('content_top', page) }}
-                {{ block('page_content') }}
-                {{ msi_block_render('content_bottom', page) }}
-            </div>
-            {% if block('sidebar') %}
-            <div class="col-md-4">
-                <div id="sidebar">
-                    {#<p><a class="btn btn-primary btn-block btn-lg" href="#"><span class="icon-star icon-large"></span> GET STARTED NOW!</a></p>#}
-                    {{ block('sidebar') }}
-                    {#<p class="lead"><a class="btn btn-block btn-large btn-info" href="#"><i class="icon-location-arrow icon-large"></i> DEVIS EXPRESS</a></p>#}
+<div class="header-outer">
+    <div class="container">
+        <div class="header">
+            <div class="row">
+                <div class="col-md-4">
+                    <h1><a href="{{ path('homepage') }}"><span class="icon-large icon-star"></span> ANIMADOU</a></h1>
+                    {#<div class="pull-left text-muted" style="border-top: 1px solid #999;"><small>{{ 'slogan'|trans }}</small></div>#}
+                </div>
+                <div class="col-md-8">
+                    {{ knp_menu_render('DogMainBundle:MenuBuilder:mainMenu', {'allow_safe_labels': true, 'depth': 3, 'currentClass': 'active'}) }}
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+<div class="content-header-outer">
+    <div class="container">
+        <div class="content-header">
+            {% if page.showTitle %}
+                <h2>{{ page.translation.title ?: block('title') }}</h2>
             {% endif %}
         </div>
     </div>
-
-    {#<div class="content">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="well">
-                    <h4>Lorem ipsum</h4>
-                    <p>Pellentesque ut massa vitae tortor consequat adipiscing. Nunc consequat rutrum urna eu rhoncus. Aliquam erat volutpat. Aenean id nisl vel nisl sodales pharetra. Nam bibendum ipsum sed risus condimentum congue.</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="well">
-                    <h4>Animal charity that we support</h4>
-                    SPCA
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="well">
-                    <h4>Contact</h4>
-                <p>
-                    514.826.5695
-                    <br>
-                    <a href="mailto:info@animadou.com">info@animadou.com</a>
-                </p>
-                </div>
-            </div>
-        </div>
-    </div>#}
-    <p style="margin-bottom: 5px; color: #fff;"><small>&copy; {{ 'now'|date('Y') }} {{ block('brand')|upper }}</small></p>
 </div>
-{#<div class="container">
-    <div class="content">
-        <div class="row">
-            <div class="col-md-4">
-                {{ render(controller('DogMainBundle:Service:nav')) }}
-            </div>
-            <div class="col-md-4">
-                <h4>Autres</h4>
-                <ul class="list-unstyled">
-                    <li><a href="#">Nam bibendum ipsum</a></li>
-                    <li><a href="#">Nam bibendum ipsum</a></li>
-                    <li><a href="#">Nam bibendum ipsum</a></li>
-                    <li><a href="#">Nam bibendum ipsum</a></li>
-                    <li><a href="#">Nam bibendum ipsum</a></li>
-                </ul>
-            </div>
-            <div class="col-md-4">
-                <h4>Contact</h4>
-                <p>
-                    514.826.5695
-                    <br>
-                    <a href="mailto:info@animadou.com">info@animadou.com</a>
-                </p>
+<div class="content-outer">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="sidebar">
+                        {{ block('sidebar') }}
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    {{ block('page_content') }}
+                </div>
             </div>
         </div>
     </div>
-</div>#}
+</div>
+<div class="value-outer">
+    <div class="container">
+        <div class="value">
+            dada
+        </div>
+    </div>
+</div>
+<div class="footer-outer">
+    <div class="container">
+        <div class="footer">
+            GET SOCIAL
+        </div>
+    </div>
+</div>
 {% endblock body %}
 
 {% block js %}

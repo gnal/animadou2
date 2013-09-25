@@ -1,8 +1,6 @@
-<div class="cool-sidebar">
-    <h4><a href="{{ path('dog_main_service_list') }}">Services</a></h4>
-    <ul class="list-unstyled">
-    {% for service in services %}
-        <li><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service|truncate(30) }}</a></li>
-    {% endfor %}
-    </ul>
-</div>
+<h3><a href="{{ path('dog_main_service_list') }}">Services</a></h3>
+<ul class="list-unstyled">
+{% for service in services %}
+    <li><a href="{{ path('dog_main_service_show', {service: service.translation.slug}) }}">{{ service|truncate(30) }}</a></li>
+{% endfor %}
+</ul>
