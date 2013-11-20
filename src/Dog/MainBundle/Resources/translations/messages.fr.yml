@@ -4,5 +4,6 @@ entity:
     Package: Package|Packages
     Gallery: Gallery|Galleries
     GalleryImage: Image|Images
+    Slide: Image|Images
 
 slogan: services pour animaux

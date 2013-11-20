@@ -1,9 +1,20 @@
 {% extends 'DogMainBundle::layout.html.twig' %}
 
 {% block content %}
-<p><img src="http://placekitten.com/g/970/485" alt="0"></p>
-{% endblock %}
-
-{% block sidebar %}
-{{ render(controller('DogMainBundle:Testimonial:random')) }}
+<div class="row">
+    <div class="col-md-8">
+        <ul class="slider list-unstyled">
+            {% for slide in page.slides %}
+                <li><img class="img-responsive" src="{{ slide.pathname }}" alt="0"></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <ul class="carousel list-unstyled">
+            {% for slide in page.slides %}
+                <li><img class="img-responsive" src="{{ slide.pathname('filename', '0') }}" alt="0"></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endblock %}

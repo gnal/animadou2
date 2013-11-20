@@ -67,3 +67,34 @@ services:
         class: %msi_admin.manager.class%
         arguments: [ Dog\MainBundle\Entity\Testimonial ]
         parent: msi_admin.manager
+
+    # Slide
+    dog_main_slide_admin:
+        class: Dog\MainBundle\Admin\SlideAdmin
+        arguments: [ @dog_main.slide_manager ]
+        parent: msi_admin.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [setParent, [@msi_cms_page_admin]]
+
+    dog_main.slide_manager:
+        class: %msi_admin.manager.class%
+        arguments: [ Dog\MainBundle\Entity\Slide ]
+        parent: msi_admin.manager
+
+    # Page
+    msi_cms_page_admin:
+        class: %msi_cms.page.admin%
+        arguments: [ @msi_cms.page_manager ]
+        parent: msi_admin.admin
+        tags:
+            - { name: msi.admin }
+        calls:
+            - [addChild, [@msi_cms_block_admin]]
+            - [addChild, [@dog_main_slide_admin]]
+
+    msi_cms.page_manager:
+        class: Msi\AdminBundle\Manager\PageManager
+        arguments: [ %msi_cms.page.class% ]
+        parent: msi_admin.manager

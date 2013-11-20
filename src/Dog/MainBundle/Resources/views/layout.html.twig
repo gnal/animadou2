@@ -45,11 +45,15 @@
                     </div>
                 </div>
                 <div class="col-md-8">
+                        {{ msi_render_block('content_top', page) }}
                     {{ block('page_content') }}
+                    {{ msi_render_block('content_bottom', page) }}
                 </div>
             </div>
             {% else %}
+                {{ msi_render_block('content_top', page) }}
                 {{ block('page_content') }}
+                {{ msi_render_block('content_bottom', page) }}
             {% endif %}
         </div>
     </div>
